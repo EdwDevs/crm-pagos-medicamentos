@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+  base: process.env.PAGES === "true" ? "/crm-pagos-medicamentos/" : "/",
   server: {
     port: 5173,
     proxy: { "/api": "http://localhost:4000" },
