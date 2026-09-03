@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: crm-pagos-medicamentos-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node src/server.js
+    healthCheckPath: /api/products
+    envVars:
+      - key: SEED_FROM_FIREBASE
+        value: "1"

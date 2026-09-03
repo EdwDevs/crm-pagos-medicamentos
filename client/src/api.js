@@ -18,7 +18,7 @@ export const fmtDate = (iso) => {
   return d.toLocaleDateString("es-CO", { day: "2-digit", month: "short", year: "numeric" });
 };
 
-const BASE = "/api";
+const BASE = import.meta.env.VITE_API_URL || "/api";
 
 async function request(path, options = {}) {
   const res = await fetch(BASE + path, {
